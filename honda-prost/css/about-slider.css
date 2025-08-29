@@ -1,0 +1,111 @@
+.wrapper2 {
+  /* max-width: 1100px;  */
+  width: 100%;
+  position: relative;
+  padding: 0 0.5rem;
+}
+
+.slider-wrapper2 {
+  padding: 4rem 2rem;
+  background: var(--color-text);
+}
+
+.slider-wrapper2 h1 {
+  line-height: 100%;
+  text-transform: uppercase;
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-size: 4rem;
+  color: var(--color-bg);
+  margin: 1rem 0 3rem 0;
+}
+.wrapper2 i {
+  top: 40%;
+  padding: 0 1rem;
+  font-size: 5rem;
+  position: absolute;
+  text-align: center;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+  color: #fff;
+}
+.wrapper2 i:active {
+  transform: translateY(-50%) scale(0.85);
+}
+.wrapper2 i:first-child {
+  left: 0rem;
+}
+.wrapper2 i:last-child {
+  right: 0rem;
+}
+.wrapper2 .carousel2{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 4) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carousel2::-webkit-scrollbar {
+  display: none;
+}
+.carousel2.no-transition {
+  scroll-behavior: auto;
+}
+.carousel.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carousel.dragging .card {
+  cursor: grab;
+  user-select: none;
+}
+.carousel :where(.card, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carousel .card {
+  scroll-snap-align: start;
+  height: 600px;
+  list-style: none;
+  /* background: #fff; */
+  cursor: pointer;
+  padding-bottom: 15px;
+  flex-direction: column;
+  /* border-radius: 8px; */
+}
+.carousel .card .img {
+  height: 500px;
+  width: 100%;
+}
+.card .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.carousel .card h2 {
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin: 1.5rem 0 0.5rem 0;
+  color: var(--color-bg);
+}
+.carousel .card span {
+  color: var(--color-bg);
+  font-style: italic;
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper .carousel {
+    grid-auto-columns: calc((100% / 2) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper .carousel {
+    grid-auto-columns: 100%;
+  }
+}
