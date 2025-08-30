@@ -42,6 +42,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const img = document.createElement("img");
     img.src = `./assets/img${i + 1}.jpg`;
     img.alt = galleryItems[i].title;
+    img.onerror = function() {
+      console.log(`Failed to load image: ${this.src}`);
+      this.style.backgroundColor = '#666';
+      this.style.display = 'block';
+    };
+    img.onload = function() {
+      console.log(`Successfully loaded: ${this.src}`);
+    };
 
     itemDiv.appendChild(img);
     itemDiv.dataset.index = i;
